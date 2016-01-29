@@ -116,7 +116,7 @@ my $stCmd = 'st.cmd';
 my $stCmdPath = catfile($ENV{TOP},$stCmd);
 system(('cp',$stCmd,'./iocBoot/' . 'ioc' . $appName . '/')) if (-e $stCmd);
 my $stCmdPathFinal = catfile($ENV{TOP},'iocBoot','ioc' . $appName, $stCmd);
-chmod 0766, $stCmdPathFinal
+chmod 0766, $stCmdPathFinal;
 system(('rm','-rf',$stCmd)) if (-e $stCmd);
 
 system(('make'));
