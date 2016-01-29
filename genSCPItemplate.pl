@@ -9,10 +9,10 @@ use File::Spec::Functions;
 use feature "switch";
 
 ## Process input ARGS if any ##
-$num_args = $#ARGV + 1;
+my $num_args = $#ARGV + 1;
 if ($num_args > 0) {
     #just take the first argument, ignore the rest
-    $arg = $ARGV[0]
+    my $arg = $ARGV[0];
     for ($arg) {
         #check that it matches one of our 3 hard coded strings: serial, usbtmc, or tcpip
         when (/^serial/) {
