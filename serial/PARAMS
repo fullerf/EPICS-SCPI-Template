@@ -3,10 +3,10 @@
 #   TOP = the full directory of the folder you run genSCPItemplate
 
 # EPICS_BASE and ASYN are needed by makeSupport.pl either as ENV vars or defined here:
-    EPICS_BASE = /Users/fdfuller/src/EPICS/base
-    ASYN = /Users/fdfuller/src/EPICS/modules/asyn
+    EPICS_BASE = /Users/fdfuller/EPICS/base
+    ASYN = /Users/fdfuller/EPICS/synApps/synApps_5_8/support/asyn-4-26
 # STREAM driver is required for SCPI stuff in the way we plan to do it
-    STREAM = /Users/fdfuller/src/EPICS/modules/streams
+    STREAM = /Users/fdfuller/EPICS/synApps/synApps_5_8/support/stream-2-6a
 # This script will create an ioc application with name $(APP_NAME)$(APP_SUFFIX).  
 # By default the suffix is empty but if you want one set it here:
     APP_SUFFIX = 
