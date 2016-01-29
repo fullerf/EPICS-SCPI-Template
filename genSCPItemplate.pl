@@ -6,6 +6,40 @@ use Cwd qw(cwd abs_path);
 use Data::Dumper;
 use File::Basename;
 use File::Spec::Functions;
+use Switch;
+
+## Process input ARGS if any ##
+$num_args = $#ARGV + 1;
+if ($num_args > 0) {
+    #just take the first argument, ignore the rest
+    $arg = $ARGV[0]
+    switch ($arg) {
+    #check that it matches one of our 3 hard coded strings: serial, usbtmc, or tcpip
+        case 'serial' {
+            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
+            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS'); 
+        }
+        case 'usbtmc' {
+            system(('cp','./usbtmc/st.cmd','./')) if (-e './usbtmc/st.cmd'); 
+            system(('cp','./usbtmc/PARAMS','./')) if (-e './usbtmc/PARAMS');
+        }
+        case 'tcpip' {
+            system(('cp','./tcpip/st.cmd','./')) if (-e './tcpip/st.cmd'); 
+            system(('cp','./tcpip/PARAMS','./')) if (-e './tcpip/PARAMS');
+        }
+        else {
+            #silently fail to default: serial
+            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
+            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS');
+        }
+    }
+}
+else {
+    #default case when no arguments given
+    system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
+    system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS');
+}
+
 
 ############ MAIN VAR DEFS ###########
 my $paramsFileName = './PARAMS';
