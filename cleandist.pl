@@ -18,6 +18,11 @@ system(('rm','-rf','./bin'));
 system(('rm','-rf','./Makefile'));
 system(('rm','-rf','./' . $appName . 'App'));
 system(('rm','-rf','./' . $appName . 'Sup'));
+system(('rm','-f','./' . 'PARAMS'));
+system(('rm','-f','./' . 'st.cmd'));
+system(('rm','-f','./' . 'genSCPItemplate.pl'));
+system(('rm','-f','./' . 'dev' . $appName . 'db'));
+system(('rm','-f','./' . 'dev' . $appName . 'proto'));
 system('cp ./install/* .');
 
 sub getCurrFolder {

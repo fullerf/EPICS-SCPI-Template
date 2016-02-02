@@ -16,28 +16,32 @@ if ($num_args > 0) {
     for ($arg) {
         #check that it matches one of our 3 hard coded strings: serial, usbtmc, or tcpip
         when (/^serial/) {
-            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
-            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS'); 
+            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd') || die "where's my shit?"; 
+            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS') || die "where's my shit?"; 
         }
         when (/^usbtmc/) {
-            system(('cp','./usbtmc/st.cmd','./')) if (-e './usbtmc/st.cmd'); 
-            system(('cp','./usbtmc/PARAMS','./')) if (-e './usbtmc/PARAMS');
+            system(('cp','./usbtmc/st.cmd','./')) if (-e './usbtmc/st.cmd') || die "where's my shit?"; 
+            system(('cp','./usbtmc/PARAMS','./')) if (-e './usbtmc/PARAMS') || die "where's my shit?";
         }
         when (/^tcpip/) {
-            system(('cp','./tcpip/st.cmd','./')) if (-e './tcpip/st.cmd'); 
-            system(('cp','./tcpip/PARAMS','./')) if (-e './tcpip/PARAMS');
+            system(('cp','./tcpip/st.cmd','./')) if (-e './tcpip/st.cmd') || die "where's my shit?"; 
+            system(('cp','./tcpip/PARAMS','./')) if (-e './tcpip/PARAMS') || die "where's my shit?";
+        }
+        when (/^reinstall/) {
+            system(('cp','./install/st.cmd','./')) if (-e './install/st.cmd') || die "where's my shit?"; 
+            system(('cp','./install/PARAMS','./')) if (-e './install/PARAMS') || die "where's my shit?"; 
         }
         default {
             #silently fail to default: serial
-            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
-            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS');
+            system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd') || die "where's my shit?"; 
+            system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS') || die "where's my shit?";
         }
     }
 }
 else {
     #default case when no arguments given
-    system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd'); 
-    system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS');
+    system(('cp','./serial/st.cmd','./')) if (-e './serial/st.cmd') || die "where's my shit?"; 
+    system(('cp','./serial/PARAMS','./')) if (-e './serial/PARAMS') || die "where's my shit?";
 }
 
 
