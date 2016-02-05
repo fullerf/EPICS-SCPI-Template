@@ -1,0 +1,8 @@
+record(waveform, "$(P)$(R):IDN") {
+  field(DESC, "SCPI identification string")
+  field(DTYP, "stream")
+  field(INP , "@dev$[APP_NAME].proto getIDN(79) $(PORT) $(ADDR)")
+  field(PINI, "YES")
+  field(FTVL, "CHAR")
+  field(NELM, "80")
+}

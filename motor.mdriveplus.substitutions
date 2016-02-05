@@ -1,0 +1,13 @@
+file "$(MOTOR)/db/basic_asyn_motor.db"
+{
+pattern
+{P,    N, M, DTYP,        PORT, DESC,          ADDR, EGU,  UREV, SREV,  DIR, VELO,       VBAS,    VMAX,  ACCL, BDST, BVEL,         BACC,   DHLM,   DLLM,  MRES,       PREC, INIT}
+{IMS:, 1, 1, "asynMotor", IMS1, "MDrive23",    0,    deg,  360,  51200, Pos, 1054.6875,  7.03125, 5400,  0.15, 0,    1054.6875,    0.15,   5400,   0,     0.00703125, 4,    ""}
+}
+
+file "$(MOTOR)/db/IMS_extra.db"
+{
+pattern
+{DEV, AREA, LOC, PORT, ADDR, TIMEOUT}
+{ims, IOC,  1,   IMS1,   0,    1}
+}
